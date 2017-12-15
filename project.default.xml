@@ -5,6 +5,11 @@
         <option name="PROJECT_PROFILE" />
         <version value="1.0" />
       </component>
+      <component name="PropertiesComponent">
+        <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+        <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+        <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+      </component>
     </defaultProject>
   </component>
 </application>

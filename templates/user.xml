@@ -1,0 +1,29 @@
+<templateSet group="user">
+  <template name="pluginprop" value="private static Lazy&lt;$interface$&gt; $fieldName$Implementation = new Lazy&lt;$interface$&gt;(Create$propertyName$,&#10;            LazyThreadSafetyMode.PublicationOnly);&#10;            &#10;public static $interface$ $propertyName$&#10;        {&#10;            get&#10;            {&#10;                var ret = $fieldName$Implementation.Value;&#10;                if (ret == null) throw NotImplementedInReferenceAssembly();&#10;&#10;                return ret;&#10;            }&#10;        }&#10;        &#10;private static $interface$ Create$propertyName$()&#10;        {&#10;#if PORTABLE&#10;            return null;&#10;#else&#10;            return new $propertyName$();&#10;#endif&#10;        }" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="interface" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fieldName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="propertyName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="notassembly" value="internal static Exception NotImplementedInReferenceAssembly()&#10;            =&gt;&#10;            new NotImplementedException(&#10;                &quot;This functionality is not implemented in the portable version of this assembly.  &quot; +&#10;                &quot;You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.&quot;);" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="proppc" value="#region $property$ Nitification Property &#10;&#10;$type$ $field$;&#10;&#10;public $type$ $property$&#10;{&#10;    get { return $field$; }&#10;    set &#10;    { &#10;        $field$ = value;&#10;        OnPropertyChanged();&#10;    }&#10;}&#10;&#10;#endregion" description="Generate Notification Property" toReformat="false" toShortenFQNames="true">
+    <variable name="type" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="property" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field" expression="underscoresToCamelCase(String)" defaultValue="$property$" alwaysStopAt="false" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="SQL" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="sample" value="$hoge$" description="hogehoge" toReformat="false" toShortenFQNames="true">
+    <variable name="hoge" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>
